@@ -9,7 +9,10 @@ class GeeksForGeeks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.red),
+      darkTheme: ThemeData(primarySwatch: Colors.green),
+      color: Colors.blue,
       home: HomeActivity(),
     );
   }
