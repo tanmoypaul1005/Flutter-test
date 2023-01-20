@@ -24,7 +24,7 @@ class HomeActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Hello World----------')),
+      appBar: AppBar(title: Text('Hello World')),
     );
   }
 }
