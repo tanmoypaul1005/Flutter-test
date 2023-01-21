@@ -71,12 +71,47 @@ class HomeActivity extends StatelessWidget {
                 icon: Icon(Icons.message), label: "Contact"),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile")
           ],
-          
           onTap: (int index) {
-            if (index == 0) {}
-            if (index == 1) {}
-            if (index == 2) {}
+            if (index == 0) {
+              MySnackBar("This is Home", context);
+            }
+            if (index == 1) {
+              MySnackBar("This is Contact", context);
+            }
+            if (index == 2) {
+              MySnackBar("This is Profile", context);
+            }
           }),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+                padding: EdgeInsets.all(0),
+                child: UserAccountsDrawerHeader(
+                  decoration: BoxDecoration(color: Colors.black),
+                  accountName: Text("Tanmoy Paul"),
+                  accountEmail: Text("tanmoypaul@gmail.com"),
+                )),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("Home"),
+              onTap: () {},
+            ),
+            ListTile(
+                leading: Icon(Icons.phone),
+                title: Text("Contact"),
+                onTap: () {}),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Profile"),
+            ),
+            ListTile(
+                leading: Icon(Icons.email), title: Text("Email"), onTap: () {}),
+            ListTile(
+                leading: Icon(Icons.phone), title: Text("Phone"), onTap: () {}),
+          ],
+        ),
+      ),
     );
   }
 }
