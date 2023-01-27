@@ -66,7 +66,7 @@ class HomeActivity extends StatelessWidget {
           alignment: Alignment.center,
           decoration: BoxDecoration(
             color: Colors.green,
-            border: Border.all(color: Colors.black)
+            border: Border.all(color: Colors.black,width: 5)
           ),
         ));
   }
