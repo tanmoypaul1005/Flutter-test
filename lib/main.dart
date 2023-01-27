@@ -64,7 +64,10 @@ class HomeActivity extends StatelessWidget {
           child: Text("Hello World"),
           margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
           alignment: Alignment.center,
-          decoration: BoxDecoration(color: Colors.green),
+          decoration: BoxDecoration(
+            color: Colors.green,
+            border: Border.all(color: Colors.black)
+          ),
         ));
   }
 }
