@@ -37,10 +37,12 @@ class HomeActivity extends StatelessWidget {
           toolbarHeight: 60,
         ),
         body: Row(
+          
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+         
           children: [
             TextButton(onPressed: (){}, child: Text("Button1")),
-            TextButton(onPressed: (){}, child: Text("Button1")),
+            ElevatedButton(onPressed: (){}, child: Text("Button1")),
             TextButton(onPressed: (){}, child: Text("Button1")),
             TextButton(onPressed: (){}, child: Text("Button1")),
             TextButton(onPressed: (){}, child: Text("Button1")),
