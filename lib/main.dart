@@ -21,20 +21,20 @@ class GeeksForGeeks extends StatelessWidget {
 }
 
 class HomeActivity extends StatelessWidget {
-   HomeActivity({Key? key}) : super(key: key);
+  const HomeActivity({Key? key}) : super(key: key);
 
   MySnackBar(message, context) {
     return ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text(message)));
   }
 
-  final ButtonStyle buttonStyle=ElevatedButton.styleFrom(
-    padding: EdgeInsets.all(25),
-    
-  );
-
   @override
   Widget build(BuildContext context) {
+
+    final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+      padding: EdgeInsets.all(25),
+    );
+    
     return Scaffold(
         appBar: AppBar(
           title: Text('Hello World'),
@@ -42,14 +42,12 @@ class HomeActivity extends StatelessWidget {
           toolbarHeight: 60,
         ),
         body: Row(
-          
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-           
           children: [
-            TextButton(onPressed: (){}, child: Text("Button1")),
-            ElevatedButton(onPressed: (){}, child: Text("Button1"),style:buttonStyle),
-            OutlinedButton(onPressed: (){}, child: Text("Button1")),
-          
+            TextButton(onPressed: () {}, child: Text("Button1")),
+            ElevatedButton(
+                onPressed: () {}, child: Text("Button1"), style: buttonStyle),
+            OutlinedButton(onPressed: () {}, child: Text("Button1")),
           ],
         ));
   }
