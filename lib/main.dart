@@ -33,8 +33,13 @@ class HomeActivity extends StatelessWidget {
 
     final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
       padding: EdgeInsets.all(25),
+      backgroundColor: Colors.deepPurpleAccent,
+      foregroundColor: Colors.white,
+      shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(10))  
+      )
     );
-    
+
     return Scaffold(
         appBar: AppBar(
           title: Text('Hello World'),
