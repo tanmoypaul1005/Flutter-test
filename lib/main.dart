@@ -28,31 +28,6 @@ class HomeActivity extends StatelessWidget {
         .showSnackBar(SnackBar(content: Text(message)));
   }
 
-  MyAlertDialog(context) {
-    return showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return Expanded(
-              child: AlertDialog(
-            title: Text("Alert !"),
-            content: Text('Do you want to Delete'),
-            actions: [
-              TextButton(
-                  onPressed: () {
-                    MySnackBar("Delete", context);
-                    Navigator.of(context).pop();
-                  },
-                  child: Text("Yes")),
-              TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text("No"))
-            ],
-          ));
-        });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,13 +36,12 @@ class HomeActivity extends StatelessWidget {
           centerTitle: true,
           toolbarHeight: 60,
         ),
-        body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              MyAlertDialog(context);
-            },
-            child: Text("Button1"),
-          ),
+        body: Column(
+          children: [
+            Padding(padding: EdgeInsets.all(20),child: TextField(decoration: InputDecoration(border: OutlineInputBorder(),labelText: "First Name"),),),
+            Padding(padding: EdgeInsets.all(20),child: TextField(decoration: InputDecoration(border: OutlineInputBorder(),labelText: "Last Name"),),),
+            Padding(padding: EdgeInsets.all(20),child: TextField(decoration: InputDecoration(border: OutlineInputBorder(),labelText: "Email Address"),),),
+          ],
         ));
   }
 }
