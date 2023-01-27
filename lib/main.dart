@@ -28,32 +28,46 @@ class HomeActivity extends StatelessWidget {
         .showSnackBar(SnackBar(content: Text(message)));
   }
 
+  MyAlertDialog(context) {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Expanded(
+              child: AlertDialog(
+            title: Text("Alert !"),
+            content: Text('Do you want to Delete'),
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    MySnackBar("Delete", context);
+                    Navigator.of(context).pop();
+                  },
+                  child: Text("Yes")),
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text("No"))
+            ],
+          ));
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
-
-    final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-      padding: EdgeInsets.all(25),
-      backgroundColor: Colors.deepPurpleAccent,
-      foregroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(10))  
-      )
-    );
-
     return Scaffold(
         appBar: AppBar(
           title: Text('Hello World'),
           centerTitle: true,
           toolbarHeight: 60,
         ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            TextButton(onPressed: () {}, child: Text("Button1")),
-            ElevatedButton(
-                onPressed: () {}, child: Text("Button1"), style: buttonStyle),
-            OutlinedButton(onPressed: () {}, child: Text("Button1")),
-          ],
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              MyAlertDialog(context);
+            },
+            child: Text("Button1"),
+          ),
         ));
   }
 }
