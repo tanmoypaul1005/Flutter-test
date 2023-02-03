@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,7 +34,7 @@ class HomeActivity extends StatelessWidget {
         title: Text('Hello World'),
         centerTitle: true,
       ),
-      
+
       floatingActionButton: FloatingActionButton(
         elevation: 10,
         child: Icon(Icons.add),
