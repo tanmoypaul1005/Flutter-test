@@ -28,7 +28,7 @@ class HomeActivity extends StatelessWidget {
         .showSnackBar(SnackBar(content: Text(message)));
   }
 
-  var MyItrem = [
+  var MyItems = [
     {
       "title": "",
       "image":
@@ -60,12 +60,15 @@ class HomeActivity extends StatelessWidget {
           toolbarHeight: 60,
         ),
         body: ListView.builder(
-          itemCount: MyItrem.length,
+          itemCount: MyItems.length,
           itemBuilder: (context, index) {
             return GestureDetector(
-              onTap: (){},
+              onTap: () {},
               child: Container(
-                
+                margin: EdgeInsets.all(10),
+                width: double.infinity,
+                height: 200,
+                child: Image.network(MyItems[index]["image"]!),
               ),
             );
           },
