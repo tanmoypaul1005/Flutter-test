@@ -22,7 +22,6 @@ class GeeksForGeeks extends StatelessWidget {
 
 class HomeActivity extends StatelessWidget {
   const HomeActivity({Key? key}) : super(key: key);
-
   MySnackBar(message, context) {
     return ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text(message)));
@@ -38,9 +37,27 @@ class HomeActivity extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Padding(padding: EdgeInsets.all(20),child: TextField(decoration: InputDecoration(border: OutlineInputBorder(),labelText: "First Name"),),),
-            Padding(padding: EdgeInsets.all(20),child: TextField(decoration: InputDecoration(border: OutlineInputBorder(),labelText: "Last Name"),),),
-            Padding(padding: EdgeInsets.all(20),child: TextField(decoration: InputDecoration(border: OutlineInputBorder(),labelText: "Email Address"),),),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(), labelText: "First Name"),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(), labelText: "Last Name"),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(), labelText: "Email Address"),
+              ),
+            ),
           ],
         ));
   }
