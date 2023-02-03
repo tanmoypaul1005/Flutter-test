@@ -21,11 +21,35 @@ class GeeksForGeeks extends StatelessWidget {
 }
 
 class HomeActivity extends StatelessWidget {
-  const HomeActivity({Key? key}) : super(key: key);
+  HomeActivity({Key? key}) : super(key: key);
+
   MySnackBar(message, context) {
     return ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text(message)));
   }
+
+  var MyItrem = [
+    {
+      "title": "",
+      "image":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4IDh5SbD4BlOlVACIte8Z631jthBV2oyWTQ&usqp=CAU"
+    },
+    {
+      "title": "",
+      "image":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4IDh5SbD4BlOlVACIte8Z631jthBV2oyWTQ&usqp=CAU"
+    },
+    {
+      "title": "",
+      "image":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4IDh5SbD4BlOlVACIte8Z631jthBV2oyWTQ&usqp=CAU"
+    },
+    {
+      "title": "",
+      "image":
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4IDh5SbD4BlOlVACIte8Z631jthBV2oyWTQ&usqp=CAU"
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -35,30 +59,16 @@ class HomeActivity extends StatelessWidget {
           centerTitle: true,
           toolbarHeight: 60,
         ),
-        body: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(20),
-              child: TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(), labelText: "First Name"),
+        body: ListView.builder(
+          itemCount: MyItrem.length,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: (){},
+              child: Container(
+                
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(20),
-              child: TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(), labelText: "Last Name"),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(20),
-              child: TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(), labelText: "Email Address"),
-              ),
-            ),
-          ],
+            );
+          },
         ));
   }
 }
