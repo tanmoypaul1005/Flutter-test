@@ -30,22 +30,22 @@ class HomeActivity extends StatelessWidget {
 
   var MyItems = [
     {
-      "title": "",
+      "title": "Title No 1",
       "image":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4IDh5SbD4BlOlVACIte8Z631jthBV2oyWTQ&usqp=CAU"
     },
     {
-      "title": "",
+      "title": "Title No 2",
       "image":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4IDh5SbD4BlOlVACIte8Z631jthBV2oyWTQ&usqp=CAU"
     },
     {
-      "title": "",
+      "title": "Title No 3",
       "image":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4IDh5SbD4BlOlVACIte8Z631jthBV2oyWTQ&usqp=CAU"
     },
     {
-      "title": "",
+      "title": "Title No 4",
       "image":
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4IDh5SbD4BlOlVACIte8Z631jthBV2oyWTQ&usqp=CAU"
     },
@@ -63,12 +63,12 @@ class HomeActivity extends StatelessWidget {
           itemCount: MyItems.length,
           itemBuilder: (context, index) {
             return GestureDetector(
-              onTap: () {},
+              onTap: () {MySnackBar(MyItems[index]["title"]!,context);},
               child: Container(
                 margin: EdgeInsets.all(10),
                 width: double.infinity,
                 height: 200,
-                child: Image.network(MyItems[index]["image"]!),
+                child: Image.network(MyItems[index]["image"]!,fit:BoxFit.fill),
               ),
             );
           },
