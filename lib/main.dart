@@ -34,6 +34,8 @@ class HomeActivity extends StatelessWidget {
         body: Center(
           child: Card(
             elevation: 80,
+            color: Colors.red,
+            shadowColor: Colors.green,
             child: SizedBox(
                 height: 200,
                 width: 200,
