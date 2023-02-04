@@ -23,37 +23,66 @@ class GeeksForGeeks extends StatelessWidget {
 class HomeActivity extends StatelessWidget {
   const HomeActivity({Key? key}) : super(key: key);
 
-  MySnackBar(message, context) {
-    return ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text(message)));
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('HomeActivity'),
+        centerTitle: true,
+        toolbarHeight: 60,
+      ),
+      body: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+        ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Activity1()));
+            },
+            child: Text("Button1")),
+        ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Activity2()));
+            },
+            child: Text("Button2")),
+      ]),
+    );
   }
+}
+
+class Activity1 extends StatelessWidget {
+  const Activity1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-    final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-      padding: EdgeInsets.all(25),
-      backgroundColor: Colors.deepPurpleAccent,
-      foregroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(10))  
-      )
-    );
-
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Hello World'),
-          centerTitle: true,
-          toolbarHeight: 60,
-        ),
-        body: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            TextButton(onPressed: () {}, child: Text("Button1")),
-            ElevatedButton(
-                onPressed: () {}, child: Text("Button1"), style: buttonStyle),
-            OutlinedButton(onPressed: () {}, child: Text("Button1")),
-          ],
-        ));
+      appBar: AppBar(
+        title: Text('Activity1'),
+        centerTitle: true,
+        toolbarHeight: 60,
+      ),
+      body: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+        ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Activity2()));
+            },
+            child: Text("Button2")),
+      ]),
+    );
+  }
+}
+
+class Activity2 extends StatelessWidget {
+  const Activity2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Activity2'),
+        centerTitle: true,
+        toolbarHeight: 60,
+      ),
+    );
   }
 }
