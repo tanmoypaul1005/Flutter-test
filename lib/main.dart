@@ -35,13 +35,14 @@ class HomeActivity extends StatelessWidget {
         ElevatedButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Activity1()));
+                  MaterialPageRoute(builder: (context) => Activity1("This is Activity 1")),
+);
             },
             child: Text("Button1")),
         ElevatedButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Activity2()));
+                  MaterialPageRoute(builder: (context) => Activity2("This is Activity 2")));
             },
             child: Text("Button2")),
       ]),
@@ -50,13 +51,14 @@ class HomeActivity extends StatelessWidget {
 }
 
 class Activity1 extends StatelessWidget {
-  const Activity1({Key? key}) : super(key: key);
+  String msg;
+   Activity1(this.msg,{Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Activity1'),
+        title: Text(msg),
         centerTitle: true,
         toolbarHeight: 60,
       ),
@@ -64,7 +66,7 @@ class Activity1 extends StatelessWidget {
         ElevatedButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Activity2()));
+                  MaterialPageRoute(builder: (context) => Activity2("This is Activity 2")));
             },
             child: Text("Button2")),
       ]),
@@ -72,14 +74,16 @@ class Activity1 extends StatelessWidget {
   }
 }
 
+
 class Activity2 extends StatelessWidget {
-  const Activity2({Key? key}) : super(key: key);
+  String msg;
+   Activity2(this.msg,{Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Activity2'),
+        title: Text(msg),
         centerTitle: true,
         toolbarHeight: 60,
       ),
